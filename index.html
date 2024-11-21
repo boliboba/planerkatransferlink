@@ -10,42 +10,70 @@
       margin: 0; /* Убираем отступы */
     }
 
+    body {
+      background-color: #1a1a1a; /* Тёмный фон для контраста */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Прижимаем к верхнему краю */
+      padding-top: 0px; /* Отступ сверху */
+    }
+
     .cta-button {
       display: inline-flex;
-      padding: 15px 30px;
-      background-color: #28a745; /* Зеленоватый цвет кнопки */
+      padding: 10px 15px;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Градиент для яркости */
       color: white;
-      font-size: 18px;
+      font-size: 23px;
       font-weight: bold;
       text-align: center;
       border-radius: 50px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       align-items: center;
       justify-content: center;
-      max-width: 370px; /* Максимальная ширина кнопки */
+      max-width: 450px; /* Максимальная ширина кнопки */
       width: 100%; /* Ширина 100% до максимума */
       box-sizing: border-box; /* Чтобы padding не выходил за пределы */
       font-family: 'Inter', sans-serif;
-    }
-
-    .cta-button:hover {
-      background-color: #218838; /* Более темный зеленый при наведении */
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+      position: relative;
+      box-shadow: 0px 10px 20px rgba(255, 126, 95, 0.5); /* Мягкая тень */
     }
 
     .cta-button img {
       margin-right: 10px; /* Отступ между иконкой и текстом */
-      width: 24px;
-      height: 24px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05); /* Лёгкое увеличение при наведении */
+      box-shadow: 0px 15px 25px rgba(255, 126, 95, 0.7); /* Увеличенная тень */
+    }
+
+    .cta-button:hover::after {
+      opacity: 1; /* Эффект подсветки при наведении */
     }
   </style>
 </head>
-<body style="background-color: #232323; text-align: center; padding: 0px;">
+<body>
 
   <a href="https://planerka.app/bogdan-isachenko-sp1m8o/znakomstvo-s-mentorom" target="_blank" class="cta-button">
-    <img src="https://img.icons8.com/ios/452/online-support.png" alt="Консультация">
+    <img src="https://img.icons8.com/ios/900/phone.png" alt="Консультация">
     Записаться на консультацию
   </a>
 
